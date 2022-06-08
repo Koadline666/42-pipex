@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/08 15:14:22 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/08 20:22:12 by afenzl           ###   ########.fr       */
+/*   Created: 2022/06/08 18:03:21 by afenzl            #+#    #+#             */
+/*   Updated: 2022/06/08 18:12:17 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX
-# define PIPEX
+#include "pipex.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include "libft/libft.h"
-
-
-
-#endif
+// void ft_check_input(char **argv)
+// {
+	
+// }
