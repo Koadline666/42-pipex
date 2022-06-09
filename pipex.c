@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:14:09 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/09 16:26:01 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/09 16:49:35 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,17 @@ char	*ft_get_path(char **env)
 			path = ft_strnstr(env[i], "PATH=",ft_strlen(env[i])) + 5;
 			split = ft_split(path, ':');
 		}
+		i++;
 	}
-	i = 0;
+	// ft_print2(split);
+	i = 3;
+	// what i would need here is the path + /cmd and then try access
 	while (split[i] != NULL)
 	{
-		if (access(split[i], F_OK) == 0)
-			return(split[i]);
+		if (access(split[i], 0) == 0)
+		{
+			return("did access the right path");
+		}
 		i++;
 	}
 	return (NULL);
