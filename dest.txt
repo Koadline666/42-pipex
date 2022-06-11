@@ -1,3 +1,12 @@
-something is here
-
-....
+total 120
+-rw-r--r--   1 afenzl  2021_heilbronn   2565 11 Jun 18:37 Makefile
+-rwxr-xr-x   1 afenzl  2021_heilbronn  24644 11 Jun 18:37 a.out
+-rw-r--r--   1 afenzl  2021_heilbronn    959  8 Jun 18:12 check_input.c
+-rw-r--r--   1 afenzl  2021_heilbronn      0 11 Jun 18:40 dest.txt
+-rw-r--r--   1 afenzl  2021_heilbronn   1234  9 Jun 15:43 get_path.c
+drwxr-xr-x  49 afenzl  2021_heilbronn   1666 11 Jun 17:58 libft
+-rw-r--r--   1 afenzl  2021_heilbronn   2531 11 Jun 18:39 pipex.c
+-rw-r--r--   1 afenzl  2021_heilbronn   1830 11 Jun 18:38 pipex.h
+-rw-r--r--   1 afenzl  2021_heilbronn   2804 11 Jun 18:37 pipex.o
+-rw-r--r--   1 afenzl  2021_heilbronn   1540 11 Jun 18:37 utils.c
+-rw-r--r--   1 afenzl  2021_heilbronn   1424 11 Jun 18:37 utils.o
