@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:14:09 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/11 17:46:56 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/11 17:56:16 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ void	ft_free2(char **str)
 char	*ft_get_path(char **env, char *cmd)
 {
 	int		i;
-	// char	*path;
 	char	**split;
 
 	i = 0;
@@ -113,7 +112,6 @@ char	*ft_get_path(char **env, char *cmd)
 		if (access(split[i], 0) == 0)
 		{
 			ft_free2(split);
-			printf("accessed this path: %s\n", split[i]);
 			return (split[i]);
 		}
 		i++;
@@ -158,7 +156,8 @@ int	main(int argc, char **argv, char **env)
 	dup2(fd[0], STDIN_FILENO);
 	close(fd[0]);
 	waitpid(0, NULL, 0);
-	char *tmp = "";
+	int	tmp;
+	tmp = "";
 	while (tmp != NULL)
 	{
 		tmp = get_next_line(STDIN_FILENO);
@@ -168,9 +167,5 @@ int	main(int argc, char **argv, char **env)
 			free(tmp);
 		}
 	}
-	// ft_printf("the PATH: %s\n", env[3]);
-	// ft_print2(env);
-	// ft_printf("\n||\n");
-	// ft_print2(argv);
 	return (0);
 }
