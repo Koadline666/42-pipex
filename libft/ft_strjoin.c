@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 13:44:12 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/07 16:42:37 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/11 16:53:39 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	}
 	join(s1, s2, new);
-	free((char *)s1);
 	return (new);
 }
