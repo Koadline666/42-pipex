@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 18:36:34 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/11 18:37:09 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/12 15:27:18 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,10 @@ void	ft_free2(char **str)
 		i++;
 	}
 	free(str);
+}
+
+void	ft_close(int *fd)
+{
+	close(fd[1]);
+	close(fd[0]);
 }
