@@ -6,21 +6,17 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:14:22 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/12 12:03:16 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/12 13:10:29 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX
-# define PIPEX
+#ifndef PIPEX_H
+# define PIPEX_H
 
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include "libft/libft.h"
-
-# ifndef RIGHTS
-#  define RIGHTS S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH
-# endif
 
 typedef struct s_pipe
 {
@@ -30,6 +26,8 @@ typedef struct s_pipe
 	int		fd_outfile;
 	char	**str;
 	char	*path;
+	char	**argv;
+	char	**env;
 }			t_pipe;
 
 void	ft_free2(char **str);

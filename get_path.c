@@ -6,11 +6,16 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 12:02:32 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/12 12:03:05 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/12 12:06:51 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
+	// if (env[i] == NULL)
+	// {
+	// 	ft_free2(split);
+	// 	return ("./");
+	// }
 
 char	**get_possible_paths(char **env)
 {
@@ -28,11 +33,6 @@ char	**get_possible_paths(char **env)
 		}
 		i++;
 	}
-	// if (env[i] == NULL)
-	// {
-	// 	ft_free2(split);
-	// 	return ("./");
-	// }
 	return (split);
 }
 
