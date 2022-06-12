@@ -1,0 +1,13 @@
+-rw-r--r--   1 afenzl  2021_heilbronn      0 12 Jun 18:32 hi.txt
+-rw-r--r--   1 afenzl  2021_heilbronn    628 12 Jun 12:44 extras
+-rw-r--r--   1 afenzl  2021_heilbronn   1231 12 Jun 15:27 pipex.h
+-rw-r--r--   1 afenzl  2021_heilbronn   1598 12 Jun 15:27 utils.c
+-rw-r--r--   1 afenzl  2021_heilbronn   1620 12 Jun 18:27 utils.o
+-rw-r--r--   1 afenzl  2021_heilbronn   1640 12 Jun 18:27 get_path.o
+-rw-r--r--   1 afenzl  2021_heilbronn   1643 12 Jun 18:20 get_path.c
+-rw-r--r--   1 afenzl  2021_heilbronn   2401 12 Jun 18:31 pipex.c
+-rw-r--r--   1 afenzl  2021_heilbronn   2448 12 Jun 18:31 pipex.o
+-rw-r--r--   1 afenzl  2021_heilbronn   2649 12 Jun 16:46 Makefile
+-rwxr-xr-x   1 afenzl  2021_heilbronn  13876 12 Jun 18:31 pipex
+drwxr-xr-x  93 afenzl  2021_heilbronn   3162 12 Jun 18:31 libft
+total 104

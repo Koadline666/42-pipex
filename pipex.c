@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:14:09 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/12 18:18:23 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/12 20:46:09 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,7 @@ void	ft_cmd1(t_pipe *pipes)
 	cmd = ft_split(pipes->argv[2], ' ');
 	path = ft_get_path(pipes->env, cmd[0]);
 	if (execve(path, cmd, pipes->env) == -1)
-	{
-		perror("Error:\nfirst command not found\n");
-		exit(-1);
-	}
+		ft_error(3);
 }
 
 void	ft_cmd2(t_pipe *pipes)
@@ -47,34 +44,33 @@ void	ft_cmd2(t_pipe *pipes)
 	cmd = ft_split(pipes->argv[3], ' ');
 	path = ft_get_path(pipes->env, cmd[0]);
 	if (execve(path, cmd, pipes->env) == -1)
-	{
-		perror("Error:\nsecond command not found\n");
-		exit(-1);
-	}
+		ft_error(4);
 }
 
 int	main(int argc, char **argv, char **env)
 {
 	t_pipe	pipes;
-	int		id;
+	int		id[2];
+	// int		cmd_num;
 
 	pipes.argv = argv;
 	pipes.env = env;
 	if (argc != 5)
-	{
-		perror("Error:\n missing arguments\n");
-		exit(1);
-	}
+		ft_error(0);
 	if (pipe(pipes.fd) == -1)
-		perror("Error:\n could not open pipe\n");
-	id = fork();
-	if (id == -1)
-		perror("Error:\ncould not fork the process\n");
-	if (id == 0)
+		ft_error(1);
+	id[0] = fork();
+	if (id[0] == -1)
+		ft_error(2);
+	if (id[0] == 0)
 		ft_cmd1(&pipes);
-	id = fork();
-	if (id == 0)
+	id[1] = fork();
+	if (id[1] == -1)
+		ft_error(2);
+	if (id[1] == 0)
 		ft_cmd2(&pipes);
 	ft_close(pipes.fd);
+	waitpid(id[0], NULL, 0);
+	waitpid(id[1], NULL, 0);
 	return (0);
 }
