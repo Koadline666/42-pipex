@@ -6,7 +6,7 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 15:27:07 by afenzl            #+#    #+#              #
-#    Updated: 2022/06/11 18:37:42 by afenzl           ###   ########.fr        #
+#    Updated: 2022/06/12 12:03:31 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CFLAGS := -Wall -Wextra -Werror
 RM := rm -f
 
 NAME = pipex
-SRC =  pipex.c utils.c
+SRC =  pipex.c utils.c get_path.c
 LIBFT = ./libft/ft_memset.c		\
 		./libft/ft_bzero.c		\
 		./libft/ft_memcpy.c		\
