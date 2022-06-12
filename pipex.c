@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:14:09 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/12 16:23:15 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/12 18:18:23 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_cmd1(t_pipe *pipes)
 	path = ft_get_path(pipes->env, cmd[0]);
 	if (execve(path, cmd, pipes->env) == -1)
 	{
-		perror("Error:\ncould not execute first command\n");
+		perror("Error:\nfirst command not found\n");
 		exit(-1);
 	}
 }
@@ -48,7 +48,7 @@ void	ft_cmd2(t_pipe *pipes)
 	path = ft_get_path(pipes->env, cmd[0]);
 	if (execve(path, cmd, pipes->env) == -1)
 	{
-		perror("Error:\ncould not execute second command\n");
+		perror("Error:\nsecond command not found\n");
 		exit(-1);
 	}
 }
@@ -61,7 +61,10 @@ int	main(int argc, char **argv, char **env)
 	pipes.argv = argv;
 	pipes.env = env;
 	if (argc != 5)
-		perror("Error:\n not the right amount of parameters\n");
+	{
+		perror("Error:\n missing arguments\n");
+		exit(1);
+	}
 	if (pipe(pipes.fd) == -1)
 		perror("Error:\n could not open pipe\n");
 	id = fork();
@@ -73,6 +76,5 @@ int	main(int argc, char **argv, char **env)
 	if (id == 0)
 		ft_cmd2(&pipes);
 	ft_close(pipes.fd);
-	// sleep(20);
 	return (0);
 }
