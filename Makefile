@@ -6,7 +6,7 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 15:27:07 by afenzl            #+#    #+#              #
-#    Updated: 2022/06/12 20:45:19 by afenzl           ###   ########.fr        #
+#    Updated: 2022/06/13 15:20:31 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,11 +62,6 @@ LIBFTSRC = ./libft/ft_memset.c		\
 		./libft/ft_lstmap.c			\
 		./libft/get_next_line/get_next_line.c	\
 		./libft/get_next_line/get_next_line_utils.c	\
-		./libft/ft_printf/ft_print_p.c	\
-		./libft/ft_printf/ft_print_sciu.c	\
-		./libft/ft_printf/ft_print_x.c	\
-		./libft/ft_printf/ft_printf.c	\
-		./libft/ft_printf/ft_types.c	
 		
 OBJ = $(SRC:.c=.o)
 

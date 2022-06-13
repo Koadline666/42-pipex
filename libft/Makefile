@@ -6,7 +6,7 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 13:28:49 by afenzl            #+#    #+#              #
-#    Updated: 2022/06/08 20:50:25 by afenzl           ###   ########.fr        #
+#    Updated: 2022/06/12 22:24:29 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,15 +70,11 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $^
-	make -C ./ft_printf
-	ar rcs $(NAME) ./ft_printf/libftprintf.a
 
 clean:
-	make fclean -C ./ft_printf
 	$(RM) $(OBJ) $(BONOBJ)
 
 fclean: clean
-	make fclean -C ./ft_printf
 	$(RM) $(NAME)
 
 re: fclean all
