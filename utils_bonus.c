@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 18:36:34 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/13 17:32:57 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/13 19:44:23 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 static char	*join(char *s1, char *s2, char *new)
 {
@@ -68,4 +68,10 @@ void	ft_close(int *fd)
 {
 	close(fd[1]);
 	close(fd[0]);
+}
+
+void	assign_int_arr(t_pipe *pipes)
+{
+	pipes->fd_prev[0] = dup(pipes->fd[0]);
+	pipes->fd_prev[1] = dup(pipes->fd[1]);
 }

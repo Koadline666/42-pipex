@@ -6,7 +6,7 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 15:27:07 by afenzl            #+#    #+#              #
-#    Updated: 2022/06/13 15:20:31 by afenzl           ###   ########.fr        #
+#    Updated: 2022/06/13 17:36:47 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ RM := rm -f
 
 NAME = pipex
 SRC =  pipex.c utils.c get_path.c error.c
+BONSRC = pipex_bonus.c utils_bonus.c get_path_bonus.c error_bonus.c
 LIBFT = ./libft/libft.a
 LIBFTSRC = ./libft/ft_memset.c		\
 		./libft/ft_bzero.c		\
@@ -64,6 +65,7 @@ LIBFTSRC = ./libft/ft_memset.c		\
 		./libft/get_next_line/get_next_line_utils.c	\
 		
 OBJ = $(SRC:.c=.o)
+BONOBJ = $(BON:.c=.o)
 
 all: $(NAME)
 
@@ -79,5 +81,9 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+bonus: $(BONOBJ) $(LIBFTSRC)
+	make bonus -C ./libft
+	$(CC) $(CFLAGS) $(LIBFT) $(BONSRC) -o $(NAME)
 
 .PHONY: all clean fclean re
