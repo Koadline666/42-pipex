@@ -6,14 +6,13 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:15:18 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/14 13:02:39 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/14 23:51:10 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIPEX_BONUS_H
 # define PIPEX_BONUS_H
 
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <errno.h>

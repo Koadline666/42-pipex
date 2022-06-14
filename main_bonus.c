@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 12:58:23 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/14 13:01:55 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/14 13:24:28 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ int	main(int argc, char **argv, char **env)
 	assign_int_arr(&pipes);
 	ft_exec_cmd(&pipes, id);
 	while (wait(NULL) != -1 || errno != ECHILD)
-		printf("waited for chid to finish\n");
+		write(1, "", 0);
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 15:27:07 by afenzl            #+#    #+#              #
-#    Updated: 2022/06/14 13:02:13 by afenzl           ###   ########.fr        #
+#    Updated: 2022/06/14 13:11:32 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME = pipex
 SRC =  pipex.c utils.c get_path.c error.c
 BONSRC = main_bonus.c pipex_bonus.c utils_bonus.c get_path_bonus.c error_bonus.c
 LIBFT = ./libft/libft.a
-LIBFTSRC = ./libft/ft_memset.c		\
+LIBFTSRC = ./libft/ft_memset.c	\
 		./libft/ft_bzero.c		\
 		./libft/ft_memcpy.c		\
 		./libft/ft_memmove.c	\
@@ -87,3 +87,7 @@ bonus: $(BONOBJ) $(LIBFTSRC)
 	$(CC) $(CFLAGS) $(LIBFT) $(BONSRC) -o $(NAME)
 
 .PHONY: all clean fclean re
+
+#relinks at make bonus
+#circular clean
+#have to include all libft files

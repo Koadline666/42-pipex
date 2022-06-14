@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:31:52 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/14 13:01:45 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/14 23:44:45 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,9 @@ void	first_command(t_pipe *pipes)
 	close(fd_infile);
 	cmd = ft_split(pipes->argv[2], ' ');
 	path = ft_get_path(pipes->env, cmd[0]);
-	if (execve(path, cmd, NULL) == -1)
+	if (execve(path, cmd, NULL) < 0)
 		ft_error(3);
+	exit(1);
 }
 
 void	between_command(t_pipe *pipes, int cmd_num)
@@ -70,8 +71,9 @@ void	between_command(t_pipe *pipes, int cmd_num)
 		ft_close(pipes->fd_prev);
 		cmd = ft_split(pipes->argv[cmd_num], ' ');
 		path = ft_get_path(pipes->env, cmd[0]);
-		if (execve(path, cmd, NULL) == -1)
+		if (execve(path, cmd, NULL) < 0)
 			ft_error(3);
+		exit(1);
 	}
 	ft_close(pipes->fd_prev);
 	assign_int_arr(pipes);
@@ -98,8 +100,9 @@ void	last_command(t_pipe *pipes)
 	close(fd_outfile);
 	cmd = ft_split(pipes->argv[pipes->argc - 2], ' ');
 	path = ft_get_path(pipes->env, cmd[0]);
-	if (execve(path, cmd, NULL) == -1)
+	if (execve(path, cmd, NULL) < 0)
 		ft_error(4);
+	exit(1);
 }
 
 void	ft_exec_cmd(t_pipe *pipes, int *id)

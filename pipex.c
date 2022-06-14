@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:14:09 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/13 15:25:02 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/14 23:42:25 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ void	ft_cmd1(t_pipe *pipes)
 	close(fd_infile);
 	cmd = ft_split(pipes->argv[2], ' ');
 	path = ft_get_path(pipes->env, cmd[0]);
-	if (execve(path, cmd, NULL) == -1)
+	if (execve(path, cmd, NULL) < 0)
 		ft_error(3);
+	exit(1);
 }
 
 void	ft_cmd2(t_pipe *pipes)
@@ -47,8 +48,9 @@ void	ft_cmd2(t_pipe *pipes)
 	close(fd_outfile);
 	cmd = ft_split(pipes->argv[3], ' ');
 	path = ft_get_path(pipes->env, cmd[0]);
-	if (execve(path, cmd, NULL) == -1)
+	if (execve(path, cmd, NULL) < 0)
 		ft_error(4);
+	exit(1);
 }
 
 int	main(int argc, char **argv, char **env)
