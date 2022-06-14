@@ -6,7 +6,7 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 15:27:07 by afenzl            #+#    #+#              #
-#    Updated: 2022/06/13 17:36:47 by afenzl           ###   ########.fr        #
+#    Updated: 2022/06/14 13:02:13 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ RM := rm -f
 
 NAME = pipex
 SRC =  pipex.c utils.c get_path.c error.c
-BONSRC = pipex_bonus.c utils_bonus.c get_path_bonus.c error_bonus.c
+BONSRC = main_bonus.c pipex_bonus.c utils_bonus.c get_path_bonus.c error_bonus.c
 LIBFT = ./libft/libft.a
 LIBFTSRC = ./libft/ft_memset.c		\
 		./libft/ft_bzero.c		\
