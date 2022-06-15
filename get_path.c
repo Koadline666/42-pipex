@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 12:02:32 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/14 23:40:49 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/15 00:13:18 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_get_path(char **env, char *cmd)
 	split = get_possible_paths(env);
 	if (ft_strchr(cmd, '/') != 0 && access(cmd, 0) == 0)
 		return (cmd);
-	while (split != NULL && split[i] != NULL)
+	while (split != NULL && split[i] != NULL && cmd != NULL)
 	{
 		split[i] = ft_strjoin2(split[i], ft_strdup("/"));
 		split[i] = ft_strjoin2(split[i], ft_strdup(cmd));
