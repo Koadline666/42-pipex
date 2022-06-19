@@ -6,17 +6,23 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 15:27:07 by afenzl            #+#    #+#              #
-#    Updated: 2022/06/14 13:11:32 by afenzl           ###   ########.fr        #
+#    Updated: 2022/06/19 16:24:32 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC := cc
-CFLAGS := -Wall -Wextra -Werror
+NAME = pipex
+NAME_BONUS = pipex_bonus
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 RM := rm -f
 
-NAME = pipex
 SRC =  pipex.c utils.c get_path.c error.c
-BONSRC = main_bonus.c pipex_bonus.c utils_bonus.c get_path_bonus.c error_bonus.c
+OBJ = $(SRC:.c=.o)
+
+BONSRC =	./bonus/main_bonus.c ./bonus/pipex_bonus.c ./bonus/utils_bonus.c	\
+			./bonus/get_path_bonus.c ./bonus/error_bonus.c
+BONOBJ = $(BONSRC:.c=.o)
+
 LIBFT = ./libft/libft.a
 LIBFTSRC = ./libft/ft_memset.c	\
 		./libft/ft_bzero.c		\
@@ -52,42 +58,27 @@ LIBFTSRC = ./libft/ft_memset.c	\
 		./libft/ft_putstr_fd.c	\
 		./libft/ft_putendl_fd.c	\
 		./libft/ft_putnbr_fd.c	\
-		./libft/ft_lstnew.c			\
-		./libft/ft_lstadd_front.c	\
-		./libft/ft_lstsize.c		\
-		./libft/ft_lstlast.c		\
-		./libft/ft_lstadd_back.c	\
-		./libft/ft_lstclear.c		\
-		./libft/ft_lstdelone.c		\
-		./libft/ft_lstiter.c		\
-		./libft/ft_lstmap.c			\
 		./libft/get_next_line/get_next_line.c	\
 		./libft/get_next_line/get_next_line_utils.c	\
-		
-OBJ = $(SRC:.c=.o)
-BONOBJ = $(BON:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFTSRC)
-	make bonus -C ./libft
-	$(CC) $(CFLAGS) $(LIBFT) $(OBJ) -o $(NAME)
+	make -C ./libft
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
-clean: clean
-	$(RM) $(OBJ)
+bonus: $(BONOBJ) $(LIBFTSRC)
+	make -C ./libft
+	$(CC) $(CFLAGS) $(LIBFT) $(BONOBJ) -o $(NAME_BONUS)
+
+clean:
 	make fclean -C ./libft/
+	$(RM) $(OBJ) $(BONOBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(NAME_BONUS)
 
 re: fclean all
 
-bonus: $(BONOBJ) $(LIBFTSRC)
-	make bonus -C ./libft
-	$(CC) $(CFLAGS) $(LIBFT) $(BONSRC) -o $(NAME)
 
 .PHONY: all clean fclean re
-
-#relinks at make bonus
-#circular clean
-#have to include all libft files

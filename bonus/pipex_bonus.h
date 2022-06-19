@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:15:18 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/14 23:51:10 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/19 16:22:18 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <errno.h>
-# include "libft/libft.h"
+# include "../libft/libft.h"
 
 typedef struct s_pipe
 {
