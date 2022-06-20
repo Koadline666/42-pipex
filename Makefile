@@ -6,12 +6,11 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 15:27:07 by afenzl            #+#    #+#              #
-#    Updated: 2022/06/19 16:24:32 by afenzl           ###   ########.fr        #
+#    Updated: 2022/06/20 14:27:35 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = pipex
-NAME_BONUS = pipex_bonus
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM := rm -f
@@ -69,14 +68,14 @@ $(NAME): $(OBJ) $(LIBFTSRC)
 
 bonus: $(BONOBJ) $(LIBFTSRC)
 	make -C ./libft
-	$(CC) $(CFLAGS) $(LIBFT) $(BONOBJ) -o $(NAME_BONUS)
+	$(CC) $(CFLAGS) $(LIBFT) $(BONOBJ) -o $(NAME)
 
 clean:
 	make fclean -C ./libft/
 	$(RM) $(OBJ) $(BONOBJ)
 
 fclean: clean
-	$(RM) $(NAME) $(NAME_BONUS)
+	$(RM) $(NAME)
 
 re: fclean all
 
