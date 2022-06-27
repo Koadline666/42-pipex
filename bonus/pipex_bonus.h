@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:15:18 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/27 18:41:06 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/27 19:54:16 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ void	ft_error(int errorcode);
 void	assign_prev(t_pipe *pipes);
 char	*ft_strjoin2(char *s1, char *s2);
 char	*ft_get_path(char **env, char *cmd);
-void	ft_exec_cmd(t_pipe *pipes, int *id);
+void	ft_exec_cmd(t_pipe *pipes, int *id, int i);
 
 #endif

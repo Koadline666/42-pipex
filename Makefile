@@ -6,11 +6,12 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 15:27:07 by afenzl            #+#    #+#              #
-#    Updated: 2022/06/27 18:20:32 by afenzl           ###   ########.fr        #
+#    Updated: 2022/06/27 19:25:12 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = pipex
+
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM := rm -f
@@ -87,6 +88,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-
 
 .PHONY: all clean fclean re

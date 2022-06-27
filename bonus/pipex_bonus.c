@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:31:52 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/27 19:16:32 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/27 19:53:39 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,11 +105,8 @@ void	last_command(t_pipe *pipes)
 	exit(1);
 }
 
-void	ft_exec_cmd(t_pipe *pipes, int *id)
+void	ft_exec_cmd(t_pipe *pipes, int *id, int i)
 {
-	int	i;
-
-	i = 0;
 	id[0] = fork();
 	if (id[0] == -1)
 		ft_error(2);
@@ -120,6 +117,7 @@ void	ft_exec_cmd(t_pipe *pipes, int *id)
 		else
 			first_command(pipes);
 	}
+	assign_prev(pipes);
 	ft_close(pipes->fd);
 	while (i < pipes->cmd_num)
 	{
