@@ -6,7 +6,7 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 15:27:07 by afenzl            #+#    #+#              #
-#    Updated: 2022/06/20 14:27:35 by afenzl           ###   ########.fr        #
+#    Updated: 2022/06/27 18:20:32 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,15 @@ LIBFTSRC = ./libft/ft_memset.c	\
 		./libft/ft_putstr_fd.c	\
 		./libft/ft_putendl_fd.c	\
 		./libft/ft_putnbr_fd.c	\
+		./libft/ft_lstnew.c			\
+		./libft/ft_lstadd_front.c	\
+		./libft/ft_lstsize.c		\
+		./libft/ft_lstlast.c		\
+		./libft/ft_lstadd_back.c	\
+		./libft/ft_lstclear.c		\
+		./libft/ft_lstdelone.c		\
+		./libft/ft_lstiter.c		\
+		./libft/ft_lstmap.c			\
 		./libft/get_next_line/get_next_line.c	\
 		./libft/get_next_line/get_next_line_utils.c	\
 

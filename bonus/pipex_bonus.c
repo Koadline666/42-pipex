@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:31:52 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/14 23:44:45 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/27 19:16:32 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	between_command(t_pipe *pipes, int cmd_num)
 		exit(1);
 	}
 	ft_close(pipes->fd_prev);
-	assign_int_arr(pipes);
+	assign_prev(pipes);
 	ft_close(pipes->fd);
 }
 

@@ -6,7 +6,7 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 13:28:49 by afenzl            #+#    #+#              #
-#    Updated: 2022/06/12 22:24:29 by afenzl           ###   ########.fr        #
+#    Updated: 2022/06/27 18:19:27 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,11 +51,7 @@ SRC = ft_memset.c		\
 		ft_putstr_fd.c	\
 		ft_putendl_fd.c	\
 		ft_putnbr_fd.c	\
-		./get_next_line/get_next_line.c	\
-		./get_next_line/get_next_line_utils.c	\
-
-OBJ = $(SRC:.c=.o)
-BON = ft_lstnew.c			\
+		ft_lstnew.c			\
 		ft_lstadd_front.c	\
 		ft_lstsize.c		\
 		ft_lstlast.c		\
@@ -63,8 +59,12 @@ BON = ft_lstnew.c			\
 		ft_lstclear.c		\
 		ft_lstdelone.c		\
 		ft_lstiter.c		\
-		ft_lstmap.c			
-BONOBJ = $(BON:.c=.o)
+		ft_lstmap.c			\
+		./get_next_line/get_next_line.c	\
+		./get_next_line/get_next_line_utils.c	\
+
+OBJ = $(SRC:.c=.o)
+
 
 all: $(NAME)
 
@@ -78,8 +78,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-
-bonus: $(OBJ) $(BONOBJ)
-	ar rcs $(NAME) $(OBJ) $(BONOBJ)
 
 .PHONY: all clean fclean re bonus

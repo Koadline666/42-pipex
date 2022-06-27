@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:15:18 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/19 16:22:18 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/27 18:41:06 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_pipe
 void	ft_free2(char **str);
 void	ft_close(int *fd);
 void	ft_error(int errorcode);
-void	assign_int_arr(t_pipe *pipes);
+void	assign_prev(t_pipe *pipes);
 char	*ft_strjoin2(char *s1, char *s2);
 char	*ft_get_path(char **env, char *cmd);
 void	ft_exec_cmd(t_pipe *pipes, int *id);
