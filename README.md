@@ -1,6 +1,6 @@
 # 42-pipex
 
-This is a project for [42Heilbronn](https://42heilbronn.de/) school`s curriculum.
+This is a project for [42Heilbronn](https://www.42heilbronn.de/en/curriculum/) school`s curriculum.
 The goal of the project is to implement a program that behaves lika a shell command that redirects input ad output using pipes.
 
 ## Description
