@@ -34,9 +34,9 @@ e.g:
  __`./pipex here_doc LIMITER cmd cmd1 ... cmdn file`__ should behave like `cmd << LIMITER | cmd1 ... | cmdn >> file`.
 
 ## What i learned:
-+ how to use pipes to __redirect input and output__ between multiple processes.
-+ how to use the fork() function to __create child processes__ and execute shell commands.
-+ how to use the __execve()__ function to execute shell commands in child processes.
++ how to use __pipes__ to redirect input and output between multiple processes.
++ how to use the fork() function to __create child processes__.
++ how to use the execve() function to __execute shell commands in child processes__.
 + how to use __file descriptors__, such as dup() and dup2(), to redirect input and output between processes.
 + how to __handle errors__ and __manage memory__ to avoid issues like memory leaks and unexpected program termination.
 + Bonus: Handling multiple pipes and supporting << and >> for "here_doc" input.
