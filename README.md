@@ -36,6 +36,7 @@ e.g:
 
 ## What i learned:
 + how to use __pipes__ to redirect input and output between multiple processes.
++ how to check for unclosed pipes using the __lsof command__.
 + how to use the fork() function to __create child processes__.
 + how to use the execve() function to __execute shell commands in child processes__.
 + how to use __file descriptors__, such as dup() and dup2(), to redirect input and output between processes.
