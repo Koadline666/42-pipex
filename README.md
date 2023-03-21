@@ -2,7 +2,7 @@
 #### *Unix System Programming and Pipelines: A Pipex Project Overview*
 This is a project for [42Heilbronn](https://www.42heilbronn.de/en/curriculum/) school's curriculum.
 
-The goal of the project is to implement a program that will implement the behavior of the shell `|` and redirections.
+The goal of the project is to write a program that will implement the behavior of the shell `|` and redirections.
 
 ## Description
 ### mandatory part:
