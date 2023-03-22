@@ -6,14 +6,14 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 15:27:07 by afenzl            #+#    #+#              #
-#    Updated: 2022/06/27 19:25:12 by afenzl           ###   ########.fr        #
+#    Updated: 2023/03/22 12:05:43 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = pipex
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra 
 RM := rm -f
 
 SRC =  pipex.c utils.c get_path.c error.c
@@ -75,10 +75,13 @@ all: $(NAME)
 $(NAME): $(OBJ) $(LIBFTSRC)
 	make -C ./libft
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
+	@echo "\033[0;32mplease run the program with ./pipex file1 cmd1 cmd2 file2 \033[0m"
 
 bonus: $(BONOBJ) $(LIBFTSRC)
 	make -C ./libft
 	$(CC) $(CFLAGS) $(LIBFT) $(BONOBJ) -o $(NAME)
+	@echo "\033[0;32mplease run the program with ./pipex file1 cmd1 cmd2 cmd3 ... cmdn file2 \033[0m"
+	@echo "\033[0;32mor to use here_doc:         ./pipex here_doc LIMITER cmd cmd1 ... cmdn file \033[0m"
 
 clean:
 	make fclean -C ./libft/

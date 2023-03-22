@@ -6,13 +6,13 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 14:37:39 by afenzl            #+#    #+#              #
-#    Updated: 2022/05/22 13:40:12 by afenzl           ###   ########.fr        #
+#    Updated: 2022/07/27 12:52:52 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ### COMPILATION ###
 CC	:= cc
-CFLAGS := -Wall -Werror -Wextra
+CFLAGS := -Wall -Werror -Wextra -Werror
 RM := rm -f
 
 ### VARIABLES ###

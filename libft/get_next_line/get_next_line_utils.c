@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 12:13:36 by afenzl            #+#    #+#             */
-/*   Updated: 2022/05/22 15:02:05 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/27 12:52:10 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,10 @@ char	*ft_strjoin_gnl(char *s1, char *s2)
 int	ft_strchr_gnl(const char *s, int c)
 {
 	int		i;
-	char	*p;
 
 	if (s == NULL)
 		return (0);
 	i = 0;
-	p = (char *)s;
 	while ((s[i] != (char)c) && s[i] != '\0')
 	{
 		i++;
